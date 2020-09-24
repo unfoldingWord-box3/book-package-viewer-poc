@@ -1,0 +1,17 @@
+.react-grid-item:not(.react-grid-placeholder) {
+  /* background: #ccc; */
+  border: 1px solid;
+  border-color: #888;
+}
+
+.container {
+  text-align: center;
+}
+
+hr.drag-handle {
+  border-width: 2px;
+  width: 50%;
+  margin: 0.1em auto;
+  height: 2px;
+  background: lightgray;
+}
