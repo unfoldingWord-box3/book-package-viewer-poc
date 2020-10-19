@@ -1,7 +1,7 @@
 {
   "name": "book-package-viewer-poc",
   "version": "0.1.0",
-  "homepage": "https://unfoldingword-box3.github.io/book-package-viewer-poc",
+  "homepage": "https://unfoldingword-box3.github.io/book-package-viewer-poc/",
   "private": false,
   "dependencies": {
     "@material-ui/core": "^4.7.2",
