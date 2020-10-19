@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "homepage": "https://unfoldingword-box3.github.io/book-package-viewer-poc/",
   "private": false,
+  "license": "MIT",
   "dependencies": {
     "@material-ui/core": "^4.7.2",
     "@material-ui/icons": "^4.5.1",
