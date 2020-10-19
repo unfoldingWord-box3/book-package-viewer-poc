@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.7e72c65b.chunk.css",
-    "main.js": "/static/js/main.4bac1e09.chunk.js",
-    "main.js.map": "/static/js/main.4bac1e09.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/css/2.f290e260.chunk.css": "/static/css/2.f290e260.chunk.css",
-    "static/js/2.f6191d55.chunk.js": "/static/js/2.f6191d55.chunk.js",
-    "static/js/2.f6191d55.chunk.js.map": "/static/js/2.f6191d55.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.6e3148c7f997a6805d67f0679696ba81.js": "/precache-manifest.6e3148c7f997a6805d67f0679696ba81.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.f290e260.chunk.css.map": "/static/css/2.f290e260.chunk.css.map",
-    "static/css/main.7e72c65b.chunk.css.map": "/static/css/main.7e72c65b.chunk.css.map"
+    "main.css": "/book-package-viewer-poc/static/css/main.7e72c65b.chunk.css",
+    "main.js": "/book-package-viewer-poc/static/js/main.a636faaf.chunk.js",
+    "main.js.map": "/book-package-viewer-poc/static/js/main.a636faaf.chunk.js.map",
+    "runtime~main.js": "/book-package-viewer-poc/static/js/runtime~main.e4f7ebc3.js",
+    "runtime~main.js.map": "/book-package-viewer-poc/static/js/runtime~main.e4f7ebc3.js.map",
+    "static/css/2.f290e260.chunk.css": "/book-package-viewer-poc/static/css/2.f290e260.chunk.css",
+    "static/js/2.f6191d55.chunk.js": "/book-package-viewer-poc/static/js/2.f6191d55.chunk.js",
+    "static/js/2.f6191d55.chunk.js.map": "/book-package-viewer-poc/static/js/2.f6191d55.chunk.js.map",
+    "index.html": "/book-package-viewer-poc/index.html",
+    "precache-manifest.6f69d04b72e515934c7140acaba2ec47.js": "/book-package-viewer-poc/precache-manifest.6f69d04b72e515934c7140acaba2ec47.js",
+    "service-worker.js": "/book-package-viewer-poc/service-worker.js",
+    "static/css/2.f290e260.chunk.css.map": "/book-package-viewer-poc/static/css/2.f290e260.chunk.css.map",
+    "static/css/main.7e72c65b.chunk.css.map": "/book-package-viewer-poc/static/css/main.7e72c65b.chunk.css.map"
   }
 }
