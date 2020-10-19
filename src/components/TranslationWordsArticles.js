@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import {useDeepCompareEffectNoCheck} from 'use-deep-compare-effect';
 import {
-  AuthenticationContextProvider,
+  AuthenticationContext,
   RepositoryContextProvider,
   RepositoryContext,
   FileContextProvider,
@@ -11,10 +11,11 @@ import {
 import { GlobalsContext } from '../Globals.context';
 
 function Component () {
+  const { state: auth, component: authComponent } = useContext(AuthenticationContext);
   const { state: repo, component: repoComponent } = useContext(RepositoryContext);
   const { state: file, component: fileComponent } = useContext(FileContext);
 
-  return (!repo && repoComponent) || fileComponent;
+  return (!auth && authComponent) || (!repo && repoComponent) || fileComponent;
 };
 
 function TranslationWordsArticle () {
@@ -35,26 +36,28 @@ function TranslationWordsArticle () {
 
   useDeepCompareEffectNoCheck(() => {
     const path = tWReference && './' + tWReference.split('/dict/')[1] + '.md';
-    tWReference && setFilepath(path);
+    if (tWReference) {
+      setFilepath(path);
+    } else {
+      setFilepath('README.md');
+    };
   }, [tWReference]);
 
   return (
-    <AuthenticationContextProvider>
-      <RepositoryContextProvider
-        repository={repository}
-        onRepository={setRepository}
-        config={config}
-        full_name='unfoldingWord/en_tw'
-        branch={branch}
+    <RepositoryContextProvider
+      repository={repository}
+      onRepository={setRepository}
+      config={config}
+      full_name='unfoldingWord/en_tw'
+      branch={branch}
+    >
+      <FileContextProvider
+        filepath={filepath}
+        onFilepath={setFilepath}
       >
-        <FileContextProvider
-          filepath={filepath}
-          onFilepath={setFilepath}
-        >
-          <Component />
-        </FileContextProvider>
-      </RepositoryContextProvider>
-    </AuthenticationContextProvider>
+        <Component />
+      </FileContextProvider>
+    </RepositoryContextProvider>
   );
 };
 

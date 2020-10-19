@@ -1,5 +1,5 @@
 {
-  "name": "book-package-poc",
+  "name": "book-package-viewer-poc",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

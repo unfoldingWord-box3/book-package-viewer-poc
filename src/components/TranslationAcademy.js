@@ -1,21 +1,21 @@
 import React, { useState, useContext } from 'react';
 import {useDeepCompareEffectNoCheck} from 'use-deep-compare-effect';
 import {
-  AuthenticationContextProvider,
+  AuthenticationContext,
   RepositoryContextProvider,
   RepositoryContext,
   FileContextProvider,
   FileContext,
 } from 'gitea-react-toolkit';
-import { BlockEditable } from 'markdown-translatable';
 
 import { GlobalsContext } from '../Globals.context';
 
 function Component () {
+  const { state: auth, component: authComponent } = useContext(AuthenticationContext);
   const { state: repo, component: repoComponent } = useContext(RepositoryContext);
   const { state: file, component: fileComponent } = useContext(FileContext);
 
-  return (!repo && repoComponent) || fileComponent;
+  return (!auth && authComponent) || (!repo && repoComponent) || fileComponent;
 };
 
 function TranslationAcademy () {
@@ -35,26 +35,27 @@ function TranslationAcademy () {
   const [branch, setBranch] = useState('master');
 
   useDeepCompareEffectNoCheck(() => {
-    tAReference && setFilepath('translate/' + tAReference + '/01.md')
+    if (tAReference) {
+      setFilepath('translate/' + tAReference + '/01.md');
+    } else {
+      setFilepath('README.md');
+    };
   }, [tAReference]);
 
   return (
-    <AuthenticationContextProvider>
-      <RepositoryContextProvider
-        repository={repository}
-        onRepository={setRepository}
-        config={config}
-        full_name={owner + '/' + languageId + '_ta'}
-        branch={branch}
+    <RepositoryContextProvider
+      repository={repository}
+      onRepository={setRepository}
+      full_name={owner + '/' + languageId + '_ta'}
+      // branch={branch}
+    >
+      <FileContextProvider
+        filepath={filepath}
+        onFilepath={setFilepath}
       >
-        <FileContextProvider
-          filepath={filepath}
-          onFilepath={setFilepath}
-        >
-          <Component />
-        </FileContextProvider>
-      </RepositoryContextProvider>
-    </AuthenticationContextProvider>
+        <Component />
+      </FileContextProvider>
+    </RepositoryContextProvider>
   );
 };
 
